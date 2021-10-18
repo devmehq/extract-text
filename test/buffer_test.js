@@ -27,7 +27,7 @@ var test = function (_testFunction, withMime) {
   _test(
     'doc',
     'doc.doc',
-    ' Word Specification Sample Working Draft 04, 16 August 2002 Document identifier: wd-spectools-word-s'
+    'Word Specification Sample Working Draft 04, 16 August 2002 Document identifier: wd-spectools-word-sa'
   );
 
   _test('xls', 'test.xls', 'This,is,a,spreadsheet,yay! ');
@@ -72,7 +72,7 @@ var test = function (_testFunction, withMime) {
 
   _test('ott', 'ott.ott', 'This is a document template, yay templates! Woo templates get me so excited!');
 
-  _test('ots', 'ots.ots', "This,is , template, an,open,office,template isn't,it,awesome?, you,know,it,is ");
+  _test('ots', 'ots.ots', "This,is, template, an,open,office,template isn't,it,awesome?, you,know,it,is ");
 
   _test('odg', 'odg.odg', "This is a drawing? A drawing, a drawing! This is a drawing, Aren't you mad envious?");
 

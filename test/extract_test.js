@@ -163,7 +163,7 @@ describe('textract', function () {
       fromFileWithPath(docPath, function (error, text) {
         expect(error).to.be.null;
         expect(text).to.be.an('string');
-        expect(text.substring(144, 220)).to.eql(
+        expect(text.substring(124, 200)).to.eql(
           "bit of hidden text. So we're going to end this paragraph here and go on to a"
         );
         done();
@@ -175,7 +175,7 @@ describe('textract', function () {
       fromFileWithPath(docPath, function (error, text) {
         expect(error).to.be.null;
         expect(text).to.be.an('string');
-        expect(text.substring(144, 220)).to.eql(
+        expect(text.substring(124, 200)).to.eql(
           "bit of hidden text. So we're going to end this paragraph here and go on to a"
         );
         done();
@@ -187,7 +187,7 @@ describe('textract', function () {
       fromFileWithPath(docPath, { preserveLineBreaks: true }, function (error, text) {
         expect(error).to.be.null;
         expect(text).to.be.an('string');
-        expect(text.substring(144, 230)).to.eql(
+        expect(text.substring(124, 210)).to.eql(
           "bit of hidden text. So we're going to end this paragraph here and go on to a nice litt"
         );
         done();
@@ -202,7 +202,7 @@ describe('textract', function () {
         expect(error).to.be.null;
         expect(text).to.be.an('string');
         expect(text.substring(0, 100)).to.eql(
-          ' Word Specification Sample Working Draft 04, 16 August 2002 Document identifier: wd-spectools-word-s'
+          'Word Specification Sample Working Draft 04, 16 August 2002 Document identifier: wd-spectools-word-sa'
         );
         done();
       });
@@ -214,7 +214,7 @@ describe('textract', function () {
         expect(error).to.be.null;
         expect(text).to.be.an('string');
         expect(text.substring(0, 100)).to.eql(
-          ' Word Specification Sample Working Draft 04, 16 August 2002 Document identifier: wd-spectools-word-s'
+          'Word Specification Sample Working Draft 04, 16 August 2002 Document identifier: wd-spectools-word-sa'
         );
         done();
       });
@@ -234,7 +234,7 @@ describe('textract', function () {
       fromFileWithPath(docPath, function (error, text) {
         expect(error).to.be.null;
         expect(text).to.be.an('string');
-        expect(text.length).to.eql(32658);
+        expect(text.length).to.eql(32705);
         done();
       });
     });
@@ -360,7 +360,7 @@ describe('textract', function () {
     });
 
     it('can handle files with spaces in the name', function (done) {
-      var filePath = path.join(__dirname, 'files', 'two columns.pdf');
+      const filePath = path.join(__dirname, 'files', 'two columns.pdf');
       fromFileWithPath(filePath, { preserveLineBreaks: true }, function (error, text) {
         expect(error).to.be.null;
         expect(text).to.be.a('string');
@@ -374,7 +374,7 @@ describe('textract', function () {
     });
 
     it('can handle manage PDFs with passwords', function (done) {
-      var filePath = path.join(__dirname, 'files', 'pdf-example-password.original.pdf');
+      const filePath = path.join(__dirname, 'files', 'pdf-example-password.original.pdf');
       fromFileWithPath(filePath, { pdftotextOptions: { userPassword: 'test' } }, function (error, text) {
         expect(error).to.be.null;
         expect(text).to.be.a('string');
@@ -386,7 +386,7 @@ describe('textract', function () {
     });
 
     it('can handle manage PDFS with full-width Japanese characters', function (done) {
-      var filePath = path.join(__dirname, 'files', 'full-width-j.pdf');
+      const filePath = path.join(__dirname, 'files', 'full-width-j.pdf');
       fromFileWithPath(filePath, function (error, text) {
         expect(error).to.be.null;
         expect(text).to.be.a('string');
@@ -541,7 +541,7 @@ describe('textract', function () {
       fromFileWithPath(filePath, function (error, text) {
         expect(error).to.be.null;
         expect(text).to.be.a('string');
-        expect(text).to.eql('console.log("javascript is cooler than you")');
+        expect(text).to.eql("console.log('javascript is cooler than you'); ");
         done();
       });
     });
@@ -795,8 +795,8 @@ describe('textract', function () {
   test(
     'ots',
     'ots.ots',
-    "This,is , template, an,open,office,template isn't,it,awesome?, you,know,it,is ",
-    "This,is , template,\nan,open,office,template\nisn't,it,awesome?,\nyou,know,it,is\n"
+    "This,is, template, an,open,office,template isn't,it,awesome?, you,know,it,is ",
+    "This,is, template,\nan,open,office,template\nisn't,it,awesome?,\nyou,know,it,is\n\n\n"
   );
 
   test(

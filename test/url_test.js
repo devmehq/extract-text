@@ -14,7 +14,7 @@ describe('fromUrl tests', function () {
       expect(error).to.be.null;
       expect(text).to.be.an('string');
       expect(text.substring(0, 100)).to.eql(
-        ' Washington State Legislature Bill Summary 2017-2018 2015-2016 2013-2014 2011-2012 2009-2010 2007-20'
+        ' Washington State Legislature Bill Summary Search by Bill or Initiative Number Bill Initiative 2021-'
       );
       done();
     });
@@ -35,7 +35,7 @@ describe('fromUrl tests', function () {
 
   test = function (ext, name, _text) {
     it('will ' + ext + ' files', function (done) {
-      var url = 'https://cdn.rawgit.com/dbashford/textract/master/test/files/' + name + '?raw=true';
+      var url = 'https://cdn.jsdelivr.net/gh/dbashford/textract@master/test/files/' + name + '?raw=true';
       fromUrl(url, function (error, text) {
         expect(error).to.be.null;
         expect(text).to.be.an('string');
@@ -93,7 +93,7 @@ describe('fromUrl tests', function () {
 
   test('ott', 'ott.ott', 'This is a document template, yay templates! Woo templates get me so excited!');
 
-  test('ots', 'ots.ots', "This,is , template, an,open,office,template isn't,it,awesome?, you,know,it,is ");
+  test('ots', 'ots.ots', "This,is, template, an,open,office,template isn't,it,awesome?, you,know,it,is ");
 
   test('odg', 'odg.odg', "This is a drawing? A drawing, a drawing! This is a drawing, Aren't you mad envious?");
 
