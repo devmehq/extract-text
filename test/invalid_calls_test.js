@@ -11,7 +11,7 @@ var test = function (done) {
 };
 
 var pathTests = function (testFunction) {
-  var funct;
+  let funct;
 
   beforeEach(function () {
     funct = testFunction();
@@ -39,7 +39,7 @@ var pathTests = function (testFunction) {
 };
 
 var bufferTests = function (testFunction) {
-  var funct;
+  let funct;
 
   beforeEach(function () {
     funct = testFunction();
