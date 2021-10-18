@@ -197,7 +197,7 @@ describe('textract', function () {
 
   describe('for .doc files', function () {
     it('will extract text from actual doc files', function (done) {
-      var docPath = path.join(__dirname, 'files', 'doc.doc');
+      const docPath = path.join(__dirname, 'files', 'doc.doc');
       fromFileWithPath(docPath, function (error, text) {
         expect(error).to.be.null;
         expect(text).to.be.an('string');
@@ -221,7 +221,7 @@ describe('textract', function () {
     });
 
     it('will not extract text from text files masquerading as doc files', function (done) {
-      var docPath = path.join(__dirname, 'files', 'notadoc.doc');
+      const docPath = path.join(__dirname, 'files', 'notadoc.doc');
       fromFileWithPath(docPath, function (error, text) {
         expect(text).to.be.null;
         expect(error.toString().indexOf('does not appear to really be a .doc file')).to.eql(36);
