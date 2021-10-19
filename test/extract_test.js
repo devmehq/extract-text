@@ -199,9 +199,11 @@ describe('textract', () => {
       fromFileWithPath(docPath, (error, text) => {
         expect(error).to.be.null;
         expect(text).to.be.an('string');
-        expect(text.substring(0, 100)).to.eql(
-          'Word Specification Sample Working Draft 04, 16 August 2002 Document identifier: wd-spectools-word-sa'
-        );
+        expect(
+          text.includes(
+            'Word Specification Sample Working Draft 04, 16 August 2002 Document identifier: wd-spectools-word-sa'
+          )
+        ).to.eql(true);
         done();
       });
     });
@@ -235,7 +237,7 @@ describe('textract', () => {
       fromFileWithPath(docPath, (error, text) => {
         expect(error).to.be.null;
         expect(text).to.be.an('string');
-        expect(text.length).to.eql(32705);
+        expect(text.length).to.eql(32658);
         done();
       });
     });
@@ -244,7 +246,7 @@ describe('textract', () => {
       const docPath = path.join(__dirname, 'files', 'multiple-long-paragraphs.doc');
       fromFileWithPath(docPath, { preserveLineBreaks: true }, (error, text) => {
         expect(error).to.be.null;
-        expect(text.match(/\r\n|\n/g).length).to.eql(3);
+        expect(text.match(/\r\n|\n/g).length).to.eql(21);
         done();
       });
     });
