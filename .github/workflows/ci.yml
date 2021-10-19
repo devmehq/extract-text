@@ -1,2 +1,64 @@
 # pdftotext -> ubuntu
 # mac -> poppler
+
+name: build-docker-image
+on:
+  push:
+    paths:
+      - 'styles/**'
+      - 'src/**'
+      - 'server/**'
+      - 'public/**'
+      - 'pages/**'
+      - 'yarn.lock'
+      - 'Dockerfile'
+    branches:
+      - '!*'
+      - 'develop'
+      - 'stage'
+      - 'master'
+
+env:
+  GH_PAT: ${{ secrets.GH_PAT }}
+  GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  CI: true
+
+jobs:
+  build:
+    runs-on: ubuntu-18.04
+    timeout-minutes: 20
+
+    steps:
+      - uses: styfle/cancel-workflow-action@0.9.1
+        with:
+          workflow_id: build-docker.yml
+          access_token: ${{ github.token }}
+
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 30
+          persist-credentials: false
+
+      - name: General
+        run: |
+          # comment
+          GIT_BRANCH=${{ github.ref }}
+          echo "REPOSITORY_NAME=$(echo "$GITHUB_REPOSITORY" | awk -F / '{print $2}')" >> $GITHUB_ENV
+          echo "GIT_BRANCH=$(echo "${GIT_BRANCH/refs\/heads\//}")" >> $GITHUB_ENV
+          echo "COMMIT_DATE=$(git log -n 1 --pretty='format:%cd' --date=format:'%y-%m-%d')" >> $GITHUB_ENV
+          echo "GH_SHA_SHORT=$(echo $GITHUB_SHA | cut -c 1-7)" >> $GITHUB_ENV
+          git config --global url."https://${{ env.GH_PAT }}:x-oauth-basic@github.com/".insteadOf "https://github.com/"
+          git config --global url."https://${{ env.GH_PAT }}:x-oauth-basic@github.com/".insteadOf "ssh://git@github.com/"
+
+      - uses: bahmutov/npm-install@v1
+        with:
+          install-command: yarn --frozen-lockfile --silent
+
+      - name: install deps
+        run: |
+          apt update
+          apt install poppler-utils antiword unrtf tesseract-ocr libtesseract-dev -y
+
+      - name: Test
+        run: |
+          yarn test && yarn lint
