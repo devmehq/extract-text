@@ -213,9 +213,11 @@ describe('textract', () => {
       fromFileWithPath(docPath, (error, text) => {
         expect(error).to.be.null;
         expect(text).to.be.an('string');
-        expect(text.substring(0, 100)).to.eql(
-          'Word Specification Sample Working Draft 04, 16 August 2002 Document identifier: wd-spectools-word-sa'
-        );
+        expect(
+          text.includes(
+            'Word Specification Sample Working Draft 04, 16 August 2002 Document identifier: wd-spectools-word-s'
+          )
+        ).to.eql(true);
         done();
       });
     });
