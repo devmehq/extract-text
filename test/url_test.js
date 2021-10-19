@@ -20,7 +20,7 @@ describe('fromUrl tests', function () {
 
   it('take object URL', (done) => {
     const url = 'https://cdn.rawgit.com/dbashford/textract/master/test/files/doc.doc?raw=true',
-      urlObj = nodeUrl.parse(url);
+      urlObj = new URL(url);
     fromUrl(urlObj, (error, text) => {
       expect(error).to.be.null;
       expect(text).to.be.an('string');
