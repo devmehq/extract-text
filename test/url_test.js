@@ -24,9 +24,11 @@ describe('fromUrl tests', function () {
     fromUrl(urlObj, (error, text) => {
       expect(error).to.be.null;
       expect(text).to.be.an('string');
-      expect(text.substring(0, 100)).to.eql(
-        ' Word Specification Sample Working Draft 04, 16 August 2002 Document identifier: wd-spectools-word-s'
-      );
+      expect(
+        text.includes(
+          'Word Specification Sample Working Draft 04, 16 August 2002 Document identifier: wd-spectools-word-sa'
+        )
+      ).to.eql(true);
       done();
     });
   });
@@ -37,7 +39,7 @@ describe('fromUrl tests', function () {
       fromUrl(url, (error, text) => {
         expect(error).to.be.null;
         expect(text).to.be.an('string');
-        expect(text.substring(0, 100)).to.eql(_text);
+        expect(text.includes(_text)).to.eql(true);
         done();
       });
     });
@@ -46,7 +48,7 @@ describe('fromUrl tests', function () {
   test(
     'doc',
     'doc.doc',
-    ' Word Specification Sample Working Draft 04, 16 August 2002 Document identifier: wd-spectools-word-s'
+    'Word Specification Sample Working Draft 04, 16 August 2002 Document identifier: wd-spectools-word-sa'
   );
 
   test('xls', 'test.xls', 'This,is,a,spreadsheet,yay! ');
