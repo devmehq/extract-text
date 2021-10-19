@@ -52,11 +52,11 @@
     "got": "11.8.2",
     "html-entities": "2.3.2",
     "iconv-lite": "0.6.3",
-    "j": "1.0.0",
     "jschardet": "3.0.0",
     "marked": "3.0.7",
     "meow": "10.1.1",
     "mime": "2.5.2",
+    "xlsx": "^0.17.3",
     "xmldom": "0.6.0",
     "xpath": "0.0.32",
     "yauzl": "2.10.0"

@@ -17,6 +17,7 @@ const fs = require('fs'),
           expect(error).to.be.null;
           expect(text).to.be.an('string');
           expect(text.substring(0, 100)).to.eql(_text);
+
           done();
         });
       });
@@ -88,13 +89,9 @@ const fs = require('fs'),
   };
 
 describe('textract fromBufferWithName', () => {
-  test(() => {
-    return global.fromBufferWithName;
-  }, false);
+  test(() => global.fromBufferWithName, false);
 });
 
 describe('textract fromBufferWithMime', () => {
-  test(() => {
-    return global.fromBufferWithMime;
-  }, true);
+  test(() => global.fromBufferWithMime, true);
 });

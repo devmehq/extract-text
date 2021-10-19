@@ -1,16 +1,14 @@
 /* eslint-disable max-len, no-unused-expressions */
 /* global fromUrl */
 
-var nodeUrl = require('url');
+const nodeUrl = require('url');
 
 describe('fromUrl tests', function () {
-  var test;
-
   this.timeout(3000);
 
-  it('will properly extract files from sites with extensions that are misleading', function (done) {
-    var url = 'http://apps.leg.wa.gov/billinfo/summary.aspx?bill=1276';
-    fromUrl(url, function (error, text) {
+  it('will properly extract files from sites with extensions that are misleading', (done) => {
+    const url = 'http://apps.leg.wa.gov/billinfo/summary.aspx?bill=1276';
+    fromUrl(url, (error, text) => {
       expect(error).to.be.null;
       expect(text).to.be.an('string');
       expect(text.substring(0, 100)).to.eql(
@@ -20,10 +18,10 @@ describe('fromUrl tests', function () {
     });
   });
 
-  it('take object URL', function (done) {
-    var url = 'https://cdn.rawgit.com/dbashford/textract/master/test/files/doc.doc?raw=true',
+  it('take object URL', (done) => {
+    const url = 'https://cdn.rawgit.com/dbashford/textract/master/test/files/doc.doc?raw=true',
       urlObj = nodeUrl.parse(url);
-    fromUrl(urlObj, function (error, text) {
+    fromUrl(urlObj, (error, text) => {
       expect(error).to.be.null;
       expect(text).to.be.an('string');
       expect(text.substring(0, 100)).to.eql(
@@ -33,10 +31,10 @@ describe('fromUrl tests', function () {
     });
   });
 
-  test = function (ext, name, _text) {
-    it('will ' + ext + ' files', function (done) {
-      var url = 'https://cdn.jsdelivr.net/gh/dbashford/textract@master/test/files/' + name + '?raw=true';
-      fromUrl(url, function (error, text) {
+  const test = function (ext, name, _text) {
+    it(`will ${ext} files`, (done) => {
+      const url = `https://cdn.jsdelivr.net/gh/dbashford/textract@master/test/files/${name}?raw=true`;
+      fromUrl(url, (error, text) => {
         expect(error).to.be.null;
         expect(text).to.be.an('string');
         expect(text.substring(0, 100)).to.eql(_text);
