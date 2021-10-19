@@ -5,11 +5,11 @@ name: build-docker-image
 on:
   push:
     paths:
-      - 'styles/**'
+      - 'test/**'
+      - 'scripts/**'
+      - 'bin/**'
+      - 'lib/**'
       - 'src/**'
-      - 'server/**'
-      - 'public/**'
-      - 'pages/**'
       - 'yarn.lock'
       - 'Dockerfile'
     branches:
