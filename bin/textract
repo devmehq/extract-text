@@ -1,4 +1,4 @@
-#!/usr/bin/env -S node --experimental-modules --harmony
+#!/usr/bin/env -S node --experimental-modules
 const path = require('path')
   , fs = require('fs');
 const meow = (...args) => import('meow').then(({default: meow}) => meow(...args));

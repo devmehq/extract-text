@@ -5,7 +5,7 @@ const { exec } = require('child_process'),
 
 describe('cli', () => {
   it('will extract text', (done) => {
-    exec(`${cliPath} ${testFilePath}`, (error, stdout, stderr) => {
+    exec(`${cliPath} ${testFilePath}`, (error, stdout) => {
       expect(stdout).to.eql('.foo {color:red}\n');
       done();
     });
