@@ -78,7 +78,7 @@
     "test": "node_modules/.bin/mocha",
     "lint": "node_modules/.bin/eslint -c .eslintrc.json lib",
     "lint:fix": "node_modules/.bin/eslint --fix -c .eslintrc.json lib",
-    "prettier": "prettier --write \"test/**/*.{ts,tsx,js,jsx}\" \"lib/**/*.{ts,tsx,js,jsx}\" \"scripts/**/*.{ts,tsx,js,jsx}\"",
+    "prettier": "prettier --write \"test/**/*.{ts,tsx,js,jsx}\" \"lib/**/*.{ts,tsx,js,jsx}\" \"scripts/**.{ts,tsx,js,jsx}\"",
     "prepare": "yarn husky install"
   },
   "license": "MIT",

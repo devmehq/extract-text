@@ -56,8 +56,8 @@ jobs:
 
       - name: install deps
         run: |
-          apt update
-          apt install poppler-utils antiword unrtf tesseract-ocr libtesseract-dev -y
+          sudo apt update
+          sudo apt install poppler-utils antiword unrtf tesseract-ocr libtesseract-dev -y
 
       - name: Test
         run: |
