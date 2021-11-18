@@ -49,7 +49,7 @@
   "dependencies": {
     "cheerio": "1.0.0-rc.10",
     "epub2": "2.0.7",
-    "got": "11.8.2",
+    "got": "11.8.3",
     "html-entities": "2.3.2",
     "iconv-lite": "0.6.3",
     "jschardet": "3.0.0",
