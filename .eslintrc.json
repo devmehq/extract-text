@@ -1,27 +1,50 @@
 {
-  "extends": "airbnb",
+  "root": true,
+  "parser": "@typescript-eslint/parser",
+  "extends": [
+    "plugin:@typescript-eslint/recommended",
+    "prettier",
+    "plugin:prettier/recommended"
+  ],
+  "plugins": [
+    "import"
+  ],
+  "overrides": [
+    {
+      "files": [
+        "src/**/*.ts"
+      ],
+      "parserOptions": {
+        "ecmaVersion": 2018,
+        "sourceType": "module"
+      }
+    },
+    {
+      "files": [
+        "__tests__/**/*.ts"
+      ],
+      "env": {
+        "jest": true
+      }
+    }
+  ],
   "rules": {
-    "func-names": 0,
-    "no-param-reassign": 0,
-    "one-var-declaration-per-line": [
+    "prefer-const": [
       "error",
-      "initializations"
+      {
+        "destructuring": "all"
+      }
     ],
-    "no-underscore-dangle": 0,
-    // es6
-    "object-shorthand": 0,
-    "one-var": [
-      "error",
-      "consecutive"
-    ],
-    "no-plusplus": "off",
-    "operator-linebreak" : "off",
-    "comma-dangle": "off"
-  },
-  "env": {
-    "mocha": true
-  },
-  "globals": {
-    "expect": true
+    "import/no-default-export": "error",
+    "@typescript-eslint/ban-ts-ignore": "off",
+    "@typescript-eslint/no-explicit-any": "off",
+    "@typescript-eslint/no-empty-function": "off",
+    "@typescript-eslint/no-empty-interface": "off",
+    "@typescript-eslint/no-inferrable-types": "off",
+    "@typescript-eslint/no-use-before-define": "off",
+    "@typescript-eslint/interface-name-prefix": "off",
+    "@typescript-eslint/triple-slash-reference": "off",
+    "@typescript-eslint/explicit-module-boundary-types": "off",
+    "@typescript-eslint/no-unused-vars": "off"
   }
 }

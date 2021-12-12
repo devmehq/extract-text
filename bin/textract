@@ -1,6 +1,6 @@
 #!/usr/bin/env -S node --experimental-modules
-const path = require('path')
-  , fs = require('fs');
+const path = require('path');
+const fs = require('fs');
 const meow = (...args) => import('meow').then(({default: meow}) => meow(...args));
 const help = 'Usage:\n' +
   '  textract pathToFile\n\n' +
@@ -20,11 +20,12 @@ const mewoCli = meow({
   help: help,
   importMeta: {url: `file://${path.resolve('../package.json')}`},
 });
+
 mewoCli.then(cli => {
   if (!cli.input || cli.input.length === 0) {
     console.log('\n' + help);
   } else {
-    const lib = path.join(path.dirname(fs.realpathSync(__filename)), '..', 'src', 'cli.js');
+    const lib = path.join(path.dirname(fs.realpathSync(__filename)), '..', 'dist', 'cli');
     const textract = require(lib);
     textract(cli.input[0], cli.flags);
   }
