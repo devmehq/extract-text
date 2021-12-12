@@ -3,10 +3,10 @@ textract
 
 A text extraction node module.
 
-[![NPM](https://nodei.co/npm/textract.png?compact=true)](https://nodei.co/npm/textract/)
-[![NPM](https://nodei.co/npm-dl/textract.png)](https://nodei.co/npm/textract/)
+[![NPM](https://nodei.co/npm/extract-text.png?compact=true)](https://nodei.co/npm/extract-text/)
+[![NPM](https://nodei.co/npm-dl/extract-text.png)](https://nodei.co/npm/extract-text/)
 
-## Currently Extracts...
+## Currently, Extracts...
 
 * HTML, HTM
 * ATOM, RSS

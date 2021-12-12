@@ -87,9 +87,12 @@ export function fromFileWithMimeAndPath(
 export function fromFileWithPath(
   filePath: boolean | Error | fs.PathLike,
   options: {
+    preserveOnlyMultipleLineBreaks?: boolean;
     preserveLineBreaks?: string | boolean;
     includeAltText?: boolean;
     typeOverride?: any;
+    tesseract?: { lang?: string; cmd?: string };
+    pdftotextOptions?: { userPassword?: string };
   },
   cb: CallbackType
 ) {
@@ -106,9 +109,9 @@ export function fromFileWithPath(
 export function fromBufferWithMime(
   type: string,
   bufferContent: Buffer,
-  options: CallbackType,
+  options: Record<string, any>,
   cb: CallbackType,
-  withPath: boolean
+  withPath?: boolean
 ) {
   if (
     typeof type === 'string' &&
@@ -125,7 +128,12 @@ export function fromBufferWithMime(
   }
 }
 
-export function fromBufferWithName(filePath: string, bufferContent: Buffer, options: CallbackType, cb: CallbackType) {
+export function fromBufferWithName(
+  filePath: string,
+  bufferContent: Buffer,
+  options: Record<string, any>,
+  cb: CallbackType
+) {
   let type;
   if (typeof filePath === 'string') {
     type = mime.getType(filePath);

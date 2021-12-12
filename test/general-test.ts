@@ -1,14 +1,10 @@
 /* eslint-disable max-len, no-unused-expressions */
-/* global textract, fromFileWithPath, fromFileWithMimeAndPath, fromBufferWithName, fromBufferWithMime, fromUrl */
-
 import path from 'path';
 import fs from 'fs';
+import { expect } from 'chai';
+import { fromBufferWithMime, fromBufferWithName, fromFileWithMimeAndPath, fromFileWithPath, fromUrl } from '../src';
 
 describe('textract', () => {
-  it('should be an object', () => {
-    expect(textract).to.be.an.instanceof(Object);
-  });
-
   it('properties should be functions', () => {
     expect(typeof fromFileWithPath).to.eql('function');
     expect(typeof fromFileWithMimeAndPath).to.eql('function');
@@ -20,7 +16,7 @@ describe('textract', () => {
   describe('will error out gracefully', () => {
     it('when file does not exist', (done) => {
       const filePath = 'foo/bar/foo.txt';
-      fromFileWithPath(filePath, (error, text) => {
+      fromFileWithPath(filePath, undefined, (error: Error, text) => {
         expect(text).to.be.null;
         // expect(error).to.be.an('object');
         expect(error.message).to.be.an('string');
@@ -31,7 +27,7 @@ describe('textract', () => {
 
     it('when file has unregistered mime type', (done) => {
       const filePath = path.join(__dirname, 'files', 'MxAgCrProd.ppt');
-      fromFileWithPath(filePath, (error, text) => {
+      fromFileWithPath(filePath, undefined, (error: Error, text) => {
         expect(text).to.be.null;
         // expect(error).to.be.an('object');
         expect(error.message).to.be.an('string');
@@ -46,6 +42,7 @@ describe('textract', () => {
     fromFileWithMimeAndPath(
       'appLication/vnd.openXMLformats-Officedocument.WordProcessingml.Document',
       filePath,
+      undefined,
       (error, text) => {
         expect(error).to.be.null;
         expect(text).to.be.a('string');
@@ -57,7 +54,7 @@ describe('textract', () => {
 
   it('can handle a text file with parens', (done) => {
     const filePath = path.join(__dirname, 'files', 'new doc(1).txt');
-    fromFileWithPath(filePath, (error, text) => {
+    fromFileWithPath(filePath, undefined, (error, text) => {
       expect(error).to.be.null;
       expect(text).to.be.a('string');
       expect(text).to.eql('text!!!');
@@ -67,7 +64,7 @@ describe('textract', () => {
 
   it('can handle a docx file with parens', (done) => {
     const filePath = path.join(__dirname, 'files', 'new docx(1).docx');
-    fromFileWithPath(filePath, (error, text) => {
+    fromFileWithPath(filePath, undefined, (error, text) => {
       expect(error).to.be.null;
       expect(text).to.be.a('string');
       expect(text.substring(0, 20)).to.eql('This is a test Just ');
@@ -77,7 +74,7 @@ describe('textract', () => {
 
   it('can handle cyrillic', (done) => {
     const filePath = path.join(__dirname, 'files', 'cyrillic.docx');
-    fromFileWithPath(filePath, (error, text) => {
+    fromFileWithPath(filePath, undefined, (error, text) => {
       expect(error).to.be.null;
       expect(text).to.be.a('string');
       expect(text.substring(0, 100)).to.eql(
@@ -89,7 +86,7 @@ describe('textract', () => {
 
   it('can handle special chinese characters', (done) => {
     const filePath = path.join(__dirname, 'files', 'chi.txt');
-    fromFileWithPath(filePath, (error, text) => {
+    fromFileWithPath(filePath, undefined, (error, text) => {
       expect(error).to.be.null;
       expect(text).to.be.a('string');
       expect(text.substring(0, 100)).to.eql('，卧虎藏龙卧');
@@ -100,7 +97,7 @@ describe('textract', () => {
   describe('with multi line files', () => {
     it('strips line breaks', (done) => {
       const filePath = path.join(__dirname, 'files', 'multi-line.txt');
-      fromFileWithPath(filePath, (error, text) => {
+      fromFileWithPath(filePath, undefined, (error, text) => {
         expect(error).to.be.null;
         expect(text).to.be.a('string');
         expect(text).to.eql('This file has a bunch of line breaks in it, and it also has some useful punctuation.');
@@ -134,8 +131,8 @@ describe('textract', () => {
   });
 
   describe('can handle all the different API variations', () => {
-    const test = function (done) {
-      return function (error, text) {
+    const test = function (done: any) {
+      return function (error: any, text: string) {
         expect(error).to.be.null;
         expect(text).to.be.a('string');
         expect(text.substring(0, 20)).to.eql('This is a test Just ');
@@ -145,7 +142,7 @@ describe('textract', () => {
 
     it('fromFileWithPath(filePath, callback) ', (done) => {
       const filePath = path.join(__dirname, 'files', 'new docx(1).docx');
-      fromFileWithPath(filePath, test(done));
+      fromFileWithPath(filePath, undefined, test(done));
     });
 
     it('fromFileWithPath(filePath, options, callback) ', (done) => {
@@ -158,6 +155,7 @@ describe('textract', () => {
       fromFileWithMimeAndPath(
         'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
         filePath,
+        undefined,
         test(done)
       );
     });
@@ -189,6 +187,7 @@ describe('textract', () => {
       fromBufferWithMime(
         'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
         textBuff,
+        undefined,
         test(done)
       );
     });
@@ -202,7 +201,7 @@ describe('textract', () => {
     it('fromBufferWithName(fileName, buffer, callback)', (done) => {
       const filePath = path.join(__dirname, 'files', 'new docx(1).docx'),
         textBuff = fs.readFileSync(filePath);
-      fromBufferWithName(filePath, textBuff, test(done));
+      fromBufferWithName(filePath, textBuff, undefined, test(done));
     });
 
     it('fromUrl(url, options, callback)', (done) => {
@@ -212,7 +211,7 @@ describe('textract', () => {
 
     it('fromUrl1(url,callback)', (done) => {
       const url = 'https://cdn.rawgit.com/dbashford/textract/master/test/files/new%20docx(1).docx?raw=true';
-      fromUrl(url, test(done));
+      fromUrl(url, undefined, test(done));
     });
   });
 });

@@ -1,6 +1,7 @@
 import fs from 'fs';
 import path from 'path';
 import mime from 'mime';
+import { expect } from 'chai';
 
 const test = (_testFunction: { (): any; (): any; (): any }, withMime: boolean) => {
   let testFunction: (arg0: string, arg1: Buffer, arg2: (error: any, text: any) => void) => void;
@@ -89,10 +90,10 @@ const test = (_testFunction: { (): any; (): any; (): any }, withMime: boolean) =
   _test('otp', 'otp.otp', 'This is a template title Template page text 2nd prezo text');
 };
 
-describe('textract fromBufferWithName', () => {
-  test(() => global.fromBufferWithName, false);
-});
-
-describe('textract fromBufferWithMime', () => {
-  test(() => global.fromBufferWithMime, true);
-});
+// describe('textract fromBufferWithName', () => {
+//   test(() => global.fromBufferWithName, false);
+// });
+//
+// describe('textract fromBufferWithMime', () => {
+//   test(() => global.fromBufferWithMime, true);
+// });
