@@ -46,15 +46,15 @@
       "email": "mo.meabed@gmail.com"
     }
   ],
-  "main": "./lib/index",
+  "main": "src/index",
   "bin": {
     "textract": "./bin/textract"
   },
   "scripts": {
-    "lint": "node_modules/.bin/eslint -c .eslintrc.json lib",
-    "lint:fix": "node_modules/.bin/eslint --fix -c .eslintrc.json lib",
+    "lint": "node_modules/.bin/eslint -c .eslintrc.json src",
+    "lint:fix": "node_modules/.bin/eslint --fix -c .eslintrc.json src",
     "prepare": "yarn husky install",
-    "prettier": "prettier --write \"test/**/*.{ts,tsx,js,jsx}\" \"lib/**/*.{ts,tsx,js,jsx}\" \"scripts/**.{ts,tsx,js,jsx}\"",
+    "prettier": "prettier --write \\\"test/**/*.{ts,tsx,js,jsx}\\\" \\\"src/**/*.{ts,tsx,js,jsx}\\\" \\\"scripts/**.{ts,tsx,js,jsx}\\\"",
     "test": "node_modules/.bin/mocha"
   },
   "dependencies": {

@@ -8,7 +8,7 @@ on:
       - 'test/**'
       - 'scripts/**'
       - 'bin/**'
-      - 'lib/**'
+      - 'src/**'
       - 'src/**'
       - 'yarn.lock'
       - 'Dockerfile'
