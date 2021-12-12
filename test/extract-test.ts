@@ -37,7 +37,7 @@ describe('textract', () => {
       fromFileWithPath(docPath, { preserveLineBreaks: true }, (error, text) => {
         expect(error).to.be.null;
         expect(text).to.be.an('string');
-        expect(text.length).to.eql(80);
+        expect(text.length).to.eql(81);
         expect(text.substring(0, 80)).to.eql(
           '\nThis is a\nlong string\nof text\nthat should get extracted\nwith new lines inserted'
         );
@@ -50,8 +50,8 @@ describe('textract', () => {
       fromFileWithPath(docPath, undefined, (error, text) => {
         expect(error).to.be.null;
         expect(text).to.be.an('string');
-        expect(text.length).to.eql(869);
-        expect(text.substring(565, 620)).to.eql('you say next. Learn more No thanks Enable "Ok Google" I');
+        expect(text.length).to.eql(865);
+        expect(text.substring(565, 620)).to.eql('ou say next. Learn moreNo thanksEnable "Ok Google"Impro');
         done();
       });
     });

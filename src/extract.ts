@@ -52,13 +52,13 @@ function testExtractor(extractor: ExtractorType, options: any) {
 }
 
 // global, all file type, content cleansing
-function cleanseText(options: any, cb: CallbackType) {
+function cleanseText(options: any = {}, cb: CallbackType) {
   return function (error: string | boolean | Error, text: string) {
     if (!error) {
       // clean up text
       text = replaceBadCharacters(text);
 
-      if (options.preserveLineBreaks || options.preserveOnlyMultipleLineBreaks) {
+      if (options?.preserveLineBreaks || options.preserveOnlyMultipleLineBreaks) {
         if (options.preserveOnlyMultipleLineBreaks) {
           text = text.replace(STRIP_ONLY_SINGLE_LINEBREAKS, '$1 ').trim();
         }

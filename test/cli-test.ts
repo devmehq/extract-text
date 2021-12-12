@@ -8,7 +8,7 @@ const testFilePath = path.join(__dirname, 'files', 'css.css');
 describe('cli', () => {
   it('will extract text', (done) => {
     exec(`${cliPath} ${testFilePath}`, (error, stdout) => {
-      expect(stdout).to.eql('.foo {color:red}\n');
+      expect(stdout).to.eql('.foo {\n color: red;\n}\n\n');
       done();
     });
   });

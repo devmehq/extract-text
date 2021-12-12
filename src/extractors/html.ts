@@ -38,7 +38,7 @@ function getTextWithAlt($: CheerioAPI, $element: Cheerio<Element>): string {
     .join('');
 }
 
-export function extractFromText(data: Buffer | string, options: { includeAltText?: any }, cb: CallbackType) {
+export function extractFromText(data: Buffer | string, options: { includeAltText?: any } = {}, cb: CallbackType) {
   let $, text;
 
   text = data
@@ -65,7 +65,7 @@ export function extractFromText(data: Buffer | string, options: { includeAltText
 
     const $docElement = $('textractwrapper');
 
-    if (options.includeAltText) {
+    if (options?.includeAltText) {
       text = getTextWithAlt($, $docElement);
     } else {
       text = $docElement.text();
@@ -86,7 +86,7 @@ export function extractFromText(data: Buffer | string, options: { includeAltText
   cb(null, text);
 }
 
-export function extract(filePath: fs.PathOrFileDescriptor, options: { includeAltText: any }, cb: CallbackType) {
+export function extract(filePath: string, options: { includeAltText?: any } = {}, cb: CallbackType) {
   fs.readFile(filePath, (error, data) => {
     if (error) {
       cb(error, null);

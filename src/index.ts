@@ -58,34 +58,12 @@ function _writeBufferToDisk(buff: Buffer, cb: CallbackType) {
   });
 }
 
-export function fromFileWithMimeAndPath(
-  type: string,
-  filePath: boolean | Error | fs.PathLike,
-  options: any,
-  cb: CallbackType
-) {
-  let called = false;
-
-  if (typeof type === 'string' && typeof filePath === 'string') {
-    if (typeof cb === 'function' && typeof options === 'object') {
-      // (mimeType, filePath, options, callback)
-      _extractWithType(type, filePath, options, cb);
-      called = true;
-    } else if (typeof options === 'function' && cb === undefined) {
-      // (mimeType, filePath, callback)
-      _extractWithType(type, filePath, {}, options);
-      called = true;
-    }
-  }
-
-  if (!called) {
-    // eslint-disable-next-line prefer-rest-params
-    _returnArgsError(arguments);
-  }
+export function fromFileWithMimeAndPath(type: string, filePath: string, options: any, cb: CallbackType) {
+  _extractWithType(type, filePath, options, cb);
 }
 
 export function fromFileWithPath(
-  filePath: boolean | Error | fs.PathLike,
+  filePath: string,
   options: {
     preserveOnlyMultipleLineBreaks?: boolean;
     preserveLineBreaks?: string | boolean;
@@ -96,13 +74,8 @@ export function fromFileWithPath(
   },
   cb: CallbackType
 ) {
-  if (typeof filePath === 'string' && (typeof options === 'function' || typeof cb === 'function')) {
-    const type = (options && options.typeOverride) || mime.getType(filePath);
-    fromFileWithMimeAndPath(type, filePath, options, cb);
-  } else {
-    // eslint-disable-next-line prefer-rest-params
-    _returnArgsError(arguments);
-  }
+  const type = (options && options.typeOverride) || mime.getType(filePath);
+  fromFileWithMimeAndPath(type, filePath, options, cb);
 }
 
 // eslint-disable-next-line no-unused-vars
@@ -119,7 +92,7 @@ export function fromBufferWithMime(
     bufferContent instanceof Buffer &&
     (typeof options === 'function' || typeof cb === 'function')
   ) {
-    _writeBufferToDisk(bufferContent, (newPath) => {
+    _writeBufferToDisk(bufferContent, (newPath: string) => {
       fromFileWithMimeAndPath(type, newPath, options, cb);
     });
   } else {
@@ -136,12 +109,9 @@ export function fromBufferWithName(
 ) {
   let type;
   if (typeof filePath === 'string') {
-    type = mime.getType(filePath);
-    fromBufferWithMime(type, bufferContent, options, cb, true);
-  } else {
-    // eslint-disable-next-line prefer-rest-params
-    _returnArgsError(arguments);
+    mime.getType(filePath);
   }
+  fromBufferWithMime(type, bufferContent, options, cb, true);
 }
 
 export function fromUrl(
@@ -152,7 +122,7 @@ export function fromUrl(
   },
   cb: CallbackType
 ) {
-  let extname, filePath, fullFilePath: boolean | fs.PathLike | Error, file: fs.WriteStream, callbackCalled: boolean;
+  let extname, filePath, fullFilePath: string, file: fs.WriteStream, callbackCalled: boolean;
 
   // allow url to be either a string or to be a
   // Node URL Object: https://nodejs.org/api/url.html
