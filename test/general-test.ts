@@ -1,4 +1,3 @@
-/* eslint-disable max-len, no-unused-expressions */
 import path from 'path';
 import fs from 'fs';
 import { expect } from 'chai';

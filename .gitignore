@@ -20,3 +20,5 @@ package-lock.json
 
 ignore
 .idea
+dist
+.mocharc.js

@@ -15,7 +15,6 @@ module.exports = {
   diff: true,
   exit: true,
   extension: ['js', 'cjs', 'mjs', 'ts'],
-  // file: ['./test/setup.ts', './test/teardown.ts'],
   'inline-diffs': false,
   jobs: 2,
   'node-option': ['unhandled-rejections=strict'],

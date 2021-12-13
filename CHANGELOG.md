@@ -1,3 +1,10 @@
+### 3.0.0
+* Update package
+* Migrate the codebase to typescript
+* Added docker image
+* Github Actions CI
+* Updated readme
+
 ### 2.5.0
 * [#188](https://github.com/dbashford/textract/pull/188). PR updated `marked` depedency.
 * [#179](https://github.com/dbashford/textract/pull/179). PR added ability to capture powerpoint speaker notes.

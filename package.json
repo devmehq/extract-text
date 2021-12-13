@@ -1,6 +1,6 @@
 {
-  "name": "textract2",
-  "version": "2.5.0",
+  "name": "extract-text",
+  "version": "3.0.0",
   "description": "Extracting text from files of various type including html, pdf, doc, docx, xls, xlsx, csv, pptx, png, jpg, gif, rtf, text/*, and various open office.",
   "keywords": [
     "textract",
@@ -33,10 +33,10 @@
     "otg",
     "epub"
   ],
-  "homepage": "https://github.com/devmehq/textract2",
+  "homepage": "https://github.com/devmehq/extract-text",
   "repository": {
     "type": "git",
-    "url": "https://github.com/devmehq/textract2"
+    "url": "https://github.com/devmehq/extract-text"
   },
   "license": "MIT",
   "author": "Mohamed Meabed",
@@ -54,9 +54,9 @@
     "build": "rm -rf dist && tsc -p . --skipLibCheck",
     "lint": "node_modules/.bin/eslint -c .eslintrc.json src",
     "lint:fix": "node_modules/.bin/eslint --fix -c .eslintrc.json src",
+    "mocha": "nyc mocha --report lcovonly -- test/*-test.ts",
     "prepare": "yarn husky install",
     "prettier": "prettier --write \"test/**/*.{ts,tsx,js,jsx}\" \"src/**/*.{ts,tsx,js,jsx}\" \"scripts/**.{ts,tsx,js,jsx}\"",
-    "mocha": "nyc mocha --report lcovonly -- test/*-test.ts",
     "test": "TS_NODE_TRANSPILE_ONLY=1 TS_NODE_COMPILER_OPTIONS='{\"module\":\"commonjs\"}' mocha",
     "test-ci": "TS_NODE_TRANSPILE_ONLY=1 TS_NODE_COMPILER_OPTIONS='{\"module\":\"commonjs\"}' mocha"
   },
