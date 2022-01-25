@@ -77,7 +77,7 @@
   },
   "devDependencies": {
     "@types/chai": "4.3.0",
-    "@types/eslint": "8.4.0",
+    "@types/eslint": "8.4.1",
     "@types/eslint-plugin-prettier": "3.1.0",
     "@types/marked": "4.0.1",
     "@types/mime": "2.0.3",
