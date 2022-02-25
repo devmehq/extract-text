@@ -36,7 +36,7 @@ jobs:
           fetch-depth: 30
           persist-credentials: false
 
-      - uses: actions/setup-node@v2
+      - uses: actions/setup-node@v3
         with:
           node-version: '16'
 
