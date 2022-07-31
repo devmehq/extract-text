@@ -80,7 +80,7 @@
     "@types/eslint": "8.4.5",
     "@types/eslint-plugin-prettier": "3.1.0",
     "@types/marked": "4.0.3",
-    "@types/mime": "2.0.3",
+    "@types/mime": "3.0.0",
     "@types/mocha": "9.1.1",
     "@types/prettier": "2.6.3",
     "@types/xmldom": "0.1.31",
