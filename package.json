@@ -67,7 +67,7 @@
     "html-entities": "2.3.3",
     "iconv-lite": "0.6.3",
     "jschardet": "3.0.0",
-    "marked": "4.2.0",
+    "marked": "4.2.1",
     "meow": "11.0.0",
     "mime": "3.0.0",
     "xlsx": "^0.18.5",
