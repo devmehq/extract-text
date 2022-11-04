@@ -63,7 +63,7 @@
   "dependencies": {
     "axios": "^1.0.0",
     "cheerio": "1.0.0-rc.12",
-    "epub2": "2.0.9",
+    "epub2": "3.0.1",
     "html-entities": "2.3.3",
     "iconv-lite": "0.6.3",
     "jschardet": "3.0.0",
