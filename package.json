@@ -71,7 +71,7 @@
     "meow": "11.0.0",
     "mime": "3.0.0",
     "xlsx": "^0.18.5",
-    "@xmldom/xmldom": "0.8.6",
+    "@xmldom/xmldom": "0.8.7",
     "xpath": "0.0.32",
     "yauzl": "2.10.0"
   },
