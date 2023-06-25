@@ -64,7 +64,7 @@
     "axios": "^1.0.0",
     "cheerio": "1.0.0-rc.12",
     "epub2": "3.0.1",
-    "html-entities": "2.3.6",
+    "html-entities": "2.4.0",
     "iconv-lite": "0.6.3",
     "jschardet": "3.0.0",
     "marked": "5.1.0",
