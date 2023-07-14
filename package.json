@@ -71,8 +71,8 @@
     "meow": "12.0.1",
     "mime": "3.0.0",
     "xlsx": "^0.18.5",
-    "@xmldom/xmldom": "0.8.8",
-    "xpath": "0.0.32",
+    "@xmldom/xmldom": "0.8.9",
+    "xpath": "0.0.33",
     "yauzl": "2.10.0"
   },
   "devDependencies": {
@@ -89,7 +89,7 @@
     "@typescript-eslint/parser": "6.0.0",
     "chai": "4.3.7",
     "co-mocha": "1.2.2",
-    "eslint": "8.44.0",
+    "eslint": "8.45.0",
     "eslint-config-airbnb": "19.0.4",
     "eslint-config-prettier": "8.8.0",
     "eslint-plugin-import": "2.27.5",
