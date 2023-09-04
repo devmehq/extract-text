@@ -76,7 +76,7 @@
     "yauzl": "2.10.0"
   },
   "devDependencies": {
-    "@types/chai": "4.3.5",
+    "@types/chai": "4.3.6",
     "@types/eslint": "8.44.2",
     "@types/eslint-plugin-prettier": "3.1.0",
     "@types/marked": "5.0.1",
