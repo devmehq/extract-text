@@ -97,7 +97,7 @@
     "eslint-plugin-prettier": "5.0.0",
     "eslint-plugin-react": "7.33.2",
     "husky": "8.0.3",
-    "lint-staged": "14.0.1",
+    "lint-staged": "15.0.0",
     "mocha": "10.2.0",
     "nyc": "15.1.0",
     "prettier": "3.0.3",
