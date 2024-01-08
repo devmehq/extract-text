@@ -87,7 +87,7 @@
     "@types/yauzl": "2.10.3",
     "@typescript-eslint/eslint-plugin": "6.18.0",
     "@typescript-eslint/parser": "6.18.0",
-    "chai": "4.4.0",
+    "chai": "5.0.0",
     "co-mocha": "1.2.2",
     "eslint": "8.56.0",
     "eslint-config-airbnb": "19.0.4",
