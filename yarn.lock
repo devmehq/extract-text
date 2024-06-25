@@ -430,10 +430,12 @@
   dependencies:
     marked "*"
 
-"@types/mime@3.0.4":
-  version "3.0.4"
-  resolved "https://registry.yarnpkg.com/@types/mime/-/mime-3.0.4.tgz#2198ac274de6017b44d941e00261d5bc6a0e0a45"
-  integrity sha512-iJt33IQnVRkqeqC7PzBHPTC6fDlRNRW8vjrgqtScAhrmMwe8c4Eo7+fUGTa+XdWrpEgpyKWMYmi2dIwMAYRzPw==
+"@types/mime@4.0.0":
+  version "4.0.0"
+  resolved "https://registry.yarnpkg.com/@types/mime/-/mime-4.0.0.tgz#b5f8a75697ac775ecf1daaea9bfb91cde065b397"
+  integrity sha512-5eEkJZ/BLvTE3vXGKkWlyTSUVZuzj23Wj8PoyOq2lt5I3CYbiLBOPb3XmCW6QcuOibIUE6emHXHt9E/F/rCa6w==
+  dependencies:
+    mime "*"
 
 "@types/mocha@10.0.7":
   version "10.0.7"
@@ -3454,7 +3456,7 @@ mime-types@^2.1.12:
   dependencies:
     mime-db "1.52.0"
 
-mime@4.0.3:
+mime@*, mime@4.0.3:
   version "4.0.3"
   resolved "https://registry.yarnpkg.com/mime/-/mime-4.0.3.tgz#cd4a1aa052fc980dfc34f111fe1be9e8b878c5d2"
   integrity sha512-KgUb15Oorc0NEKPbvfa0wRU+PItIEZmiv+pyAO2i0oTIVTJhlzMclU7w4RXWQrSOVH5ax/p/CkIO7KI4OyFJTQ==
