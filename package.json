@@ -89,7 +89,7 @@
     "@typescript-eslint/parser": "8.4.0",
     "chai": "5.1.1",
     "co-mocha": "1.2.2",
-    "eslint": "9.9.1",
+    "eslint": "9.10.0",
     "eslint-config-airbnb": "19.0.4",
     "eslint-config-prettier": "9.1.0",
     "eslint-plugin-import": "2.30.0",
