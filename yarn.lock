@@ -3410,10 +3410,10 @@ marked@*:
   resolved "https://registry.yarnpkg.com/marked/-/marked-12.0.1.tgz#8ab1eb15560c7cbe3b011074845d7ca6c4d392b0"
   integrity sha512-Y1/V2yafOcOdWQCX0XpAKXzDakPOpn6U0YLxTJs3cww6VxOzZV1BTOOYWLvH3gX38cq+iLwljHHTnMtlDfg01Q==
 
-marked@13.0.3:
-  version "13.0.3"
-  resolved "https://registry.yarnpkg.com/marked/-/marked-13.0.3.tgz#5c5b4a5d0198060c7c9bc6ef9420a7fed30f822d"
-  integrity sha512-rqRix3/TWzE9rIoFGIn8JmsVfhiuC8VIQ8IdX5TfzmeBucdY05/0UlzKaw0eVtpcN/OdVFpBk7CjKGo9iHJ/zA==
+marked@14.1.2:
+  version "14.1.2"
+  resolved "https://registry.yarnpkg.com/marked/-/marked-14.1.2.tgz#3cbc26b2d6832be32b75ae0746e0968c781b6156"
+  integrity sha512-f3r0yqpz31VXiDB/wj9GaOB0a2PRLQl6vJmXiFrniNwjkKdvakqJRULhjFKJpxOchlCRiG5fcacoUZY5Xa6PEQ==
 
 meow@13.2.0:
   version "13.2.0"
