@@ -71,7 +71,7 @@
     "meow": "13.2.0",
     "mime": "4.0.4",
     "xlsx": "^0.18.5",
-    "@xmldom/xmldom": "0.9.5",
+    "@xmldom/xmldom": "0.9.6",
     "xpath": "0.0.34",
     "yauzl": "3.2.0"
   },
@@ -100,7 +100,7 @@
     "lint-staged": "15.2.10",
     "mocha": "10.8.2",
     "nyc": "17.1.0",
-    "prettier": "3.4.1",
+    "prettier": "3.4.2",
     "pretty-quick": "4.0.0",
     "should": "13.2.3",
     "ts-node": "10.9.2",
