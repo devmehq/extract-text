@@ -71,7 +71,7 @@
     "meow": "13.2.0",
     "mime": "4.0.6",
     "xlsx": "^0.18.5",
-    "@xmldom/xmldom": "0.9.7",
+    "@xmldom/xmldom": "0.9.8",
     "xpath": "0.0.34",
     "yauzl": "3.2.0"
   },
@@ -85,8 +85,8 @@
     "@types/prettier": "3.0.0",
     "@types/xmldom": "0.1.34",
     "@types/yauzl": "2.10.3",
-    "@typescript-eslint/eslint-plugin": "8.24.1",
-    "@typescript-eslint/parser": "8.24.1",
+    "@typescript-eslint/eslint-plugin": "8.25.0",
+    "@typescript-eslint/parser": "8.25.0",
     "chai": "5.2.0",
     "co-mocha": "1.2.2",
     "eslint": "9.21.0",
@@ -104,7 +104,7 @@
     "pretty-quick": "4.0.0",
     "should": "13.2.3",
     "ts-node": "10.9.2",
-    "typescript": "5.7.3"
+    "typescript": "5.8.2"
   },
   "engines": {
     "node": ">=14"
