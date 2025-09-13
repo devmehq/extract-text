@@ -62,7 +62,7 @@
   },
   "dependencies": {
     "@xmldom/xmldom": "0.9.8",
-    "axios": "^1.11.0",
+    "axios": "^1.12.0",
     "cheerio": "1.1.2",
     "epub2": "3.0.2",
     "html-entities": "2.6.0",
