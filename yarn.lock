@@ -3759,10 +3759,10 @@ marked@*:
   resolved "https://registry.yarnpkg.com/marked/-/marked-12.0.1.tgz#8ab1eb15560c7cbe3b011074845d7ca6c4d392b0"
   integrity sha512-Y1/V2yafOcOdWQCX0XpAKXzDakPOpn6U0YLxTJs3cww6VxOzZV1BTOOYWLvH3gX38cq+iLwljHHTnMtlDfg01Q==
 
-marked@16.4.2:
-  version "16.4.2"
-  resolved "https://registry.yarnpkg.com/marked/-/marked-16.4.2.tgz#4959a64be6c486f0db7467ead7ce288de54290a3"
-  integrity sha512-TI3V8YYWvkVf3KJe1dRkpnjs68JUPyEa5vjKrp1XEEJUAOaQc+Qj+L1qWbPd0SJuAdQkFU0h73sXXqwDYxsiDA==
+marked@17.0.1:
+  version "17.0.1"
+  resolved "https://registry.yarnpkg.com/marked/-/marked-17.0.1.tgz#9db34197ac145e5929572ee49ef701e37ee9b2e6"
+  integrity sha512-boeBdiS0ghpWcSwoNm/jJBwdpFaMnZWRzjA6SkUMYb40SVaN1x7mmfGKp0jvexGcx+7y2La5zRZsYFZI6Qpypg==
 
 math-intrinsics@^1.1.0:
   version "1.1.0"
