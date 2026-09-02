@@ -61,7 +61,7 @@
     "test-ci": "TS_NODE_TRANSPILE_ONLY=1 TS_NODE_COMPILER_OPTIONS='{\"module\":\"commonjs\"}' mocha"
   },
   "dependencies": {
-    "@xmldom/xmldom": "0.9.8",
+    "@xmldom/xmldom": "0.9.12",
     "axios": "^1.11.0",
     "cheerio": "1.1.2",
     "epub2": "3.0.2",
